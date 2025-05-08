@@ -1,0 +1,115 @@
+\usepackage{indentfirst}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{csquotes}
+
+% Fonte do documento (Latin Modern)
+\usepackage{lmodern}
+% Fonte para Grego
+\usepackage{tempora}
+\babelfont[greek]{rm}{tempora}
+
+% Meus pacotes
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tabularray}
+\usepackage{upgreek}
+\usepackage{textgreek}
+\usepackage{listings}
+
+\usepackage[backend=biber, style=abnt]{biblatex}
+
+% ----------------
+% Bibliografia
+\addbibresource[glob]{bib/*.bib}
+
+
+% ----------------
+% Metadados
+
+\titulo{Template de projeto \LaTeX\ para monografia: baseado em abn\TeX 2}
+\autor{Heliton Martins Reis Filho}
+\local{Belo Horizonte}
+\data{2025}
+\orientador{Prof. Dr. João da Silva}
+\coorientador{Equipe \abnTeX}
+\instituicao{%
+Universidade Federal de Minas Gerais
+
+Instituto de Ciências Exatas
+
+Departamento de Química
+}
+
+\tipotrabalho{Tese (doutorado)}
+
+\preambulo{Tese de doutorado apresentada ao Departamento de Química da Universidade Federal de Minas Gerais como requisito parcial para a obtenção de grau de Doutor em Química.}
+
+
+% ----------------
+% Comandos personalizados
+
+% \newcommand*{\RR}{\mathbb{R}}
+\input{includes/partial/custom-commands.tex}
+
+
+% ----------------
+% Configurações de pacotes
+
+% siunitx
+\sisetup{detect-weight=true, detect-family=true, separate-uncertainty=true, output-decimal-marker={,}}
+\DeclareSIUnit\angstrom{\text {Å}}
+
+% tabularray
+\UseTblrLibrary{booktabs}
+\UseTblrLibrary{siunitx}
+
+% Cores no PDF
+\definecolor{blue}{RGB}{41,5,195}
+\definecolor{darkblue}{RGB}{28,3,136}
+
+% PDF (hyperref)
+\makeatletter
+\hypersetup{
+    %pagebackref=true,
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    pdfsubject={\imprimirpreambulo},
+    pdfcreator={LaTeX with abnTeX2},
+    pdfkeywords={trabalho de conclusão de curso}{TCC},
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,        % color of internal links
+    citecolor=blue,        % color of links to bibliography
+    filecolor=magenta,     % color of file links
+    urlcolor=blue,
+    bookmarksdepth=4
+}
+\makeatother
+
+% ----------------
+% Espaçamentos entre linhas e parágrafos
+
+% Indentação do parágrafo
+\setlength{\parindent}{1.3cm}
+
+% Espaçamento entre um parágrafo e outro
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+
+% ----------------
+
+% Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
+% em um página em branco. Ver https://github.com/abntex/abntex2/issues/170
+\makeatletter
+\setlength{\@fptop}{5pt} % Set distance from top of page to first float
+\makeatother
+
+% ----------------
+% Índice
+\makeindex
