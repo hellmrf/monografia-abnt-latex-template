@@ -1,12 +1,10 @@
 \section{Físico-Química} \label{sec:fisquim}
 
-\subsection{Descritores Moleculares}
-
 Um dos métodos mais tradicionais em QSAR, a Análise Comparativa de Campo Molecular (CoMFA, do inglês \textit{Comparative Molecular Field Analysis}) \cite{Cramer1988}, consiste em otimizar a geometria da molécula de interesse e então colocá-la em uma caixa tridimensional, na qual uma sonda (como, por exemplo, um íon) percorrerá \( n \) pontos, sempre calculando as interações eletrostáticas e estéricas com a molécula. Esse procedimento é repetido para cada molécula do conjunto de \( m \) moléculas, gerando-se uma matriz \( A \in \mathbb{R}^{m \times n} \).
 
 Define-se então um subespaço \( \mathcal{X} = C(A) = \text{span}\{A_1, A_2, \ldots, A_n\} \), em que \( C(A) \) é o espaço-coluna de \( A \) e \( A_i \) é a \( i \)-ésima coluna de \( A \). Posteriormente, partindo-se do entendimento que o subespaço \( \mathcal{X} \) também engloba ruídos e informações irrelevantes, gera-se uma nova base para um subespaço \( \mathcal{D} \subset \mathcal{X} \), com \( \dim(\mathcal{D}) < \dim(\mathcal{X}) \), aqui chamado de subespaço dos descritores selecionados, em alusão ao fato de que a hipótese central da QSAR é que esse subespaço é capaz de descrever satisfatoriamente o conjunto das moléculas.
 
-\subsubsection{LQTA-QSAR}
+\subsection{LQTA-QSAR}
 
 Embora o formalismo proposto por \textcite{Hopfinger1997} tenha demonstrado bons resultados, sua metodologia de extração de descritores não contempla diretamente as interações eletrostáticas entre a molécula e o ambiente, limitando o realismo da modelagem. Visando superar essa limitação, \textcite{LQTAQSAR2009} propuseram, em 2009, o método LQTA-QSAR, que combina os princípios da CoMFA \cite{Cramer1988} com o formalismo 4D, incorporando descritores energéticos derivados do espaço conformacional da molécula.
 
@@ -35,7 +33,7 @@ Apesar de eficiente, essa abordagem apresenta uma limitação importante: a malh
 
 Em resumo, o LQTA-QSAR permite a amostragem do espaço conformacional de uma molécula por meio de uma malha tridimensional, associando a cada ponto vetores de energia obtidos a partir de interações físico-químicas simuladas com uma sonda. Esses vetores energéticos são então utilizados como descritores para a modelagem QSAR. Contudo, a presença de pontos com interações singularmente elevadas pode introduzir variáveis irrelevantes e comprometer a robustez estatística do modelo.
 
-\subsubsection{LQTAGridHull — Amostragem Filtrada por Geometria Convexa}
+\subsection{LQTAGridHull — Amostragem Filtrada por Geometria Convexa}
 
 Uma das principais limitações do LQTA-QSAR e de métodos relacionados, como o CoMFA, reside no fato de que a sonda pode ser posicionada muito próxima --- ou mesmo no interior --- de um átomo do CEP. Nessas condições, as interações de Coulomb e Lennard-Jones calculadas nos pontos da malha tendem ao infinito ($r_{ij} \to 0$), o que gera descritores fisicamente inverossímeis, reduz a robustez estatística dos modelos e compromete sua interpretabilidade.
 
