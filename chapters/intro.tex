@@ -6,6 +6,8 @@ Neste modelo de trabalho, abordaremos a elaboração de trabalhos acadêmicos de
 
 Na \autoref{sec:historico} a seguir, abordaremos um breve histórico e motivação para esse tipo de sistemas. Na \autoref{sec:latex-abnt}, abordaremos as especificidades da utilização do \LaTeX\ seguindo as normas ABNT.
 
+Recomendo enfaticamente que a leitura deste documento seja feita em paralelo com a consulta ao código-fonte, para que o leitor possa compreender como cada elemento foi implementado. Vários recursos avançados são utilizados aqui, e muitos deles podem ser adaptados para o seu próprio trabalho. Além de um ponto de partida para o seu próprio projeto, tome este documento como uma inspiração para a arte de escrever em \LaTeX.
+
 \section{Breve histórico: \TeX, \LaTeX\ e além} \label{sec:historico}
 
 O professor emérito de Stanford, Dr. Donald E. Knuth, é amplamente reconhecido como um dos mais influentes nomes da ciência da computação teórica. Autor da série seminal de livros \emph{The Art of Computer Programming} \cite{Knuth-TAOCP}, considerada um marco na literatura técnica e científica, ele também foi agraciado com o Prêmio ACM Turing \cite{KnuthTuring1974}, frequentemente comparado ao ``Prêmio Nobel da Computação''.
@@ -28,7 +30,7 @@ Diante dessa frustração, ele decidiu interromper temporariamente sua pesquisa 
     \cite[tradução própria]{Knuth1996Kyoto}.
 \end{citacao}
 
-Ali surgiria o sistema de processamento \TeX, cuja pronúncia é ``tec'', como em ``tecnologia''; ou, no inglês, ``tech'' como em ``technology''. Isso porque o radical ``tecno'' (ou ``techno'', em inglês) tem raízes na palavra grega \foreignlanguage{greek}{τέχνη}, que significa arte e gera palavras como técnica (\foreignlanguage{greek}{τεχνική}) e tecnologia (\foreignlanguage{greek}{τεχνολογία}). Nas palavras de \textcite{Knuth1984}:
+Ali surgiria o sistema de processamento \TeX, cuja pronúncia é ``tec'', como em ``tecnologia''; ou, no inglês, ``tech'' como em ``technology''. Isso porque o radical ``tecno'' (ou ``techno'', em inglês) tem raízes na palavra grega \foreignlanguage{greek}{τέχνη}, que significa arte e gera palavras como técnica (\foreignlanguage{greek}{τεχνική}) e tecnologia (\foreignlanguage{greek}{τεχνολογία}). Portanto, para \textcite{Knuth1984}, o nome \TeX\ é uma ``versão em maiúsculas'' de \foreignlanguage{greek}{τεχ}:
 
 \begin{citacao}[english]
 English words like ``technology'' stem from a Greek root beginning with the letters \foreignlanguage{greek}{τεχ}\ldots; and this same Greek word means art as well as technology. Hence the name \TeX, which is an uppercase form of \foreignlanguage{greek}{τεχ} \cite{Knuth1984}.
@@ -44,7 +46,7 @@ O \LaTeX\ rapidamente se consolidou como o padrão de fato para a redação de d
 
 Para \textcite{Mittelbach2004}, a grande força do \LaTeX\ reside justamente nessa comunidade ativa de usuários e desenvolvedores, que ao longo das décadas contribuiu para tornar o sistema uma plataforma robusta e adaptável às mais diversas áreas do conhecimento.
 
-Atualmente, o desenvolvimento e a manutenção do projeto é coordenado pelo \textit{\LaTeX\ Project Team}, um grupo de voluntários experientes que supervisiona tanto a evolução do núcleo do \LaTeX\ quanto a compatibilidade com outros sistemas modernos. Esse grupo, cujo logotipo pode ser visto na \autoref{fig:latex-project-logo}, também é responsável pela padronização de pacotes essenciais, pela documentação oficial e pela incorporação de melhorias solicitadas pela comunidade, garantindo a estabilidade e a continuidade do ecossistema \LaTeX\ em longo prazo.
+Atualmente, o desenvolvimento e a manutenção do projeto é coordenado pelo \textit{\LaTeX\ Project Team}, um grupo de voluntários experientes que supervisiona tanto a evolução do núcleo do \LaTeX\ quanto a compatibilidade com outros sistemas modernos. Esse grupo, cujo logotipo pode ser visto na \autoref{fig:latex-project-logo}\footnote{Sugerimos observar, no código-fonte, os comandos utilizados para referenciar figuras.}, também é responsável pela padronização de pacotes essenciais, pela documentação oficial e pela incorporação de melhorias solicitadas pela comunidade, garantindo a estabilidade e a continuidade do ecossistema \LaTeX\ em longo prazo.
 
 Em 2013, Leslie Lamport também recebeu o Prêmio Turing por suas contribuições fundamentais à ciência da computação, incluindo, além do \LaTeX, seus trabalhos sobre lógica temporal e verificação formal de sistemas concorrentes \cite{LamportTuring2013}.
 
