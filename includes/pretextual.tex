@@ -3,36 +3,115 @@
 % ----------------------------------------------------------
 
 \selectlanguage{brazil}
-
 \frenchspacing
-
 \pretextual
-
-% Capa
 \imprimircapa
-
-% Folha de rosto
 \imprimirfolhaderosto*
 
 % Ficha catalográfica
-\include{includes/pages/ficha-catalografica.tex}
+\include{includes/partial/ficha-catalografica.tex}
 
-% ---
+% ==================
 
+% ------------------
 % Dedicatória
-\include{includes/pages/dedicatoria.tex}
+% ------------------
+\begin{dedicatoria}
+    \vspace*{\fill}
 
+    \centering
+    \textit{Dedico este trabalho a todos os estudantes e pesquisadores que buscam excelência na apresentação de seus textos acadêmicos, mesmo diante das dificuldades iniciais que o domínio de novas ferramentas pode representar.}%
+
+    \vspace*{\fill}
+\end{dedicatoria}
+
+
+% ------------------
 % Agradecimentos
-\include{includes/pages/agradecimentos.tex}
+% ------------------
+\begin{agradecimentos}
+    Agradeço aos desenvolvedores e colaboradores do \LaTeX{}, cuja robustez e qualidade tipográfica tornaram-se referência na produção de documentos técnicos e científicos em todo o mundo.
 
+    De modo especial, registro minha gratidão ao projeto abn\TeX 2, cuja excelência na implementação das normas da ABNT possibilita a elaboração de trabalhos acadêmicos com padronização, elegância e fidelidade às exigências institucionais.
+
+    A todos os autores de pacotes e ferramentas da comunidade \TeX{}, estendo meu reconhecimento pelo trabalho voluntário e contínuo em prol da ciência aberta, da documentação técnica de alta qualidade e da autonomia acadêmica.
+
+    Por fim, agradeço às pessoas que, direta ou indiretamente, contribuíram para que este modelo pudesse ser elaborado com clareza, organização e propósito didático.
+
+    \begin{flushright}
+    Belo Horizonte, 2025
+    \end{flushright}
+\end{agradecimentos}
+
+% ------------------
 % Epígrafe
-\include{includes/pages/epigrafe.tex}
+% ------------------
+\begin{epigrafe}
+    \vspace*{\fill}
+    \begin{flushright}
+        \textit{\TeX{} is a new typesetting system intended for the creation of beautiful books --- and especially for books that contain a lot of mathematics. By preparing a manuscript in \TeX{} format, you are telling a computer exactly how the manuscript is to be transformed into pages whose typographic quality is comparable to that of the world's finest printers.}
 
-% Resumo
-\include{includes/pages/resumos.tex}
+        --- \textcite{Knuth1984}
+    \end{flushright}
+\end{epigrafe}
 
+% ------------------
+%% RESUMOS
+% ------------------
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+
+\begin{resumo}
+    Este documento constitui uma tese fictícia elaborada com o objetivo de demonstrar a aplicação do \LaTeX{} na redação de trabalhos acadêmicos segundo as normas da Associação Brasileira de Normas Técnicas (ABNT), utilizando a classe abn\TeX 2. Ao longo dos capítulos, são apresentados exemplos comentados de comandos, ambientes e estruturas comumente utilizados em dissertações e teses, com ênfase na conformidade tipográfica e na padronização exigida por instituições de ensino e pesquisa. Este trabalho destina-se a estudantes, docentes e demais interessados que desejam dominar o uso do \LaTeX\ no contexto acadêmico brasileiro.
+
+    \textbf{Palavras-chave:} LaTeX. ABNT. abnTeX2. Modelo de tese. Formatação acadêmica.
+\end{resumo}
+
+
+% resumo em inglês
+\begin{resumo}[Abstract]
+    \begin{otherlanguage*}{english}
+        This document is a fictional thesis developed to demonstrate the use of \LaTeX{} for writing academic documents according to the standards of the Brazilian Association of Technical Standards (ABNT), through the abn\TeX 2 class. Throughout its chapters, it presents annotated examples of commonly used commands, environments, and structures in dissertations and theses, with emphasis on typographic quality and the standardization required by academic and research institutions. This work is intended for students, faculty, and others interested in mastering \LaTeX\ within the Brazilian academic context.
+
+        \textbf{Keywords:} LaTeX. ABNT. abnTeX2. Thesis template. Academic formatting.
+    \end{otherlanguage*}
+\end{resumo}
+
+% ------------------
 % Listas e Sumários
-\include{includes/partial/sumarios.tex}
+% ------------------
+
+% lista de ilustrações
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+% lista de tabelas
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+
+% lista de abreviaturas, siglas e símbolos
+% lista de abreviaturas e siglas
+\begin{siglas}
+    \item[ABNT] Associação Brasileira de Normas Técnicas
+    \item[abnTeX] ABsurdas Normas para \TeX
+\end{siglas}
+
+
+% lista de símbolos
+\begin{simbolos}
+    \item[$ \Gamma $] Letra grega Gama
+    \item[$ \Lambda $] Lambda
+    \item[$ \zeta $] Letra grega minúscula zeta
+    \item[$ \in $] Pertence
+\end{simbolos}
+
+
+% Sumario
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
 
 % ---
 

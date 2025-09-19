@@ -1,16 +1,16 @@
 \chapter{Introdução} \label{chap:intro}
 
-A qualidade tipográfica de documentos acadêmicos é um elemento essencial na comunicação científica, mas frequentemente são um grande obstáculo para o autor, especialmente em áreas como Matemática, Física e Química, que dependem extensamente de equações, fórmulas e representações, que são trabalhosos de preparar nos sistemas tradicionais de escrita.
+A excelência tipográfica é um elemento essencial da comunicação científica. Contudo, a formatação de documentos acadêmicos representa, frequentemente, um grande obstáculo para o autor, um desafio especialmente notório em áreas como Matemática, Física e Química. A dependência de equações, fórmulas e representações complexas torna a preparação desses trabalhos em sistemas de escrita tradicionais uma tarefa árdua e ineficiente.
 
-Neste modelo de trabalho, abordaremos a elaboração de trabalhos acadêmicos de alta qualidade tipográfica e em total acordo com as normas ABNT a partir do \LaTeX. Inúmeros recursos utilizados aqui podem ser observados no código-fonte deste documento.
+Este modelo foi concebido como um guia prático para a elaboração de trabalhos acadêmicos de alta qualidade com \LaTeX, garantindo total conformidade com as normas da ABNT. O documento está estruturado para ser explorado de forma interativa: para cada elemento visual, há um trecho de código-fonte correspondente que demonstra sua implementação.
 
-Na \autoref{sec:historico} a seguir, abordaremos um breve histórico e motivação para esse tipo de sistemas. Na \autoref{sec:latex-abnt}, abordaremos as especificidades da utilização do \LaTeX\ seguindo as normas ABNT.
+A discussão começa na \autoref{sec:historico}, que apresenta um breve histórico e a motivação por trás dos modernos sistemas de composição de texto. Posteriormente, a \autoref{sec:latex-abnt} foca nas especificidades da aplicação das normas ABNT no ecossistema \LaTeX. Recomenda-se, portanto, a leitura deste guia em paralelo com a consulta ao seu código-fonte. Esperamos que este material seja mais do que um template funcional: que ele sirva como inspiração para a arte e a técnica da escrita científica.
 
 \section{Breve histórico: \TeX, \LaTeX\ e além} \label{sec:historico}
 
-O professor emérito de Stanford, Dr. Donald E. Knuth, é amplamente reconhecido como um dos mais influentes nomes da ciência da computação teórica. Autor da série seminal de livros \emph{The Art of Computer Programming} \cite{Knuth-TAOCP}, considerada um marco na literatura técnica e científica, ele também foi agraciado com o Prêmio ACM Turing \cite{KnuthTuring1974}, frequentemente comparado ao ``Prêmio Nobel da Computação''.
+Donald E. Knuth, professor emérito de Stanford, é uma das figuras mais influentes da ciência da computação teórica. Sua obra seminal, a série de livros \emph{The Art of Computer Programming} \cite{Knuth-TAOCP}, é um marco da literatura técnica, e suas contribuições foram reconhecidas com o Prêmio ACM Turing, frequentemente chamado de ``Prêmio Nobel da Computação'' \cite{KnuthTuring1974}.
 
-Na década de 1970, insatisfeito ao verificar que a qualidade tipográfica obtida no Volume 2 de seu \emph{The Art Of Computer Programming} \cite{Knuth-TAOCP-2} era consideravelmente inferior àquela obtida no anterior Volume 1 \cite{Knuth-TAOCP-1}, ele se viu sem saídas:
+A gênese do \TeX\ remonta à década de 1970 e nasceu de uma frustração pessoal de Knuth. Ele constatou que a qualidade tipográfica da reedição do segundo volume de sua obra magna \cite{Knuth-TAOCP-2} era drasticamente inferior à do primeiro \cite{Knuth-TAOCP-1}, um problema que ele descreve em detalhes:
 
 \begin{citacao}
     Eu também havia preparado a segunda edição do Volume 2, o que exigia compor tipograficamente todo aquele livro novamente. Meus editores descobriram que, em 1976, era muito caro produzir um livro da mesma forma como havia sido feito em 1969. Além disso, o estilo tipográfico utilizado nos livros originais não estava disponível nas máquinas de fotocomposição óptica. Voei da Califórnia para Massachusetts para uma reunião de emergência. Os editores concordaram que a tipografia de qualidade era de extrema importância e, nos meses seguintes, empenharam-se em conseguir novas fontes que se aproximassem das anteriores.
@@ -21,32 +21,29 @@ Na década de 1970, insatisfeito ao verificar que a qualidade tipográfica obtid
     \cite[tradução própria]{Knuth1996Kyoto}.
 \end{citacao}
 
-Diante dessa frustração, ele decidiu interromper temporariamente sua pesquisa em algoritmos e estruturas de dados para desenvolver um sistema de composição tipográfica capaz de produzir textos tecnicamente precisos com qualidade tipográfica profissional, efetivamente transformando sua decepção em motivação para assumir, ele próprio, aquele desafio técnico:
+Essa insatisfação foi o catalisador para uma decisão notável: Knuth interrompeu sua pesquisa em algoritmos para se dedicar a um novo desafio --- o desenvolvimento de um sistema de composição tipográfica digital. Seu objetivo era criar uma ferramenta capaz de produzir textos com precisão matemática e excelência visual profissional. Em suas palavras:
 
 \begin{citacao}
     Eu não consegui resistir à tentação de enfrentar pessoalmente aquele problema tipográfico. Abandonei tudo o que estava fazendo --- eu havia acabado de escrever as primeiras 100 páginas do Volume 4 --- e decidi escrever programas de computador que gerassem os padrões de 0s e 1s de que meus editores e eu precisávamos para a nova edição do Volume 2
     \cite[tradução própria]{Knuth1996Kyoto}.
 \end{citacao}
 
-Ali surgiria o sistema de processamento \TeX, cuja pronúncia é ``tec'', como em ``tecnologia''; ou, no inglês, ``tech'' como em ``technology''. Isso porque o radical ``tecno'' (ou ``techno'', em inglês) tem raízes na palavra grega \foreignlanguage{greek}{τέχνη}, que significa arte e gera palavras como técnica (\foreignlanguage{greek}{τεχνική}) e tecnologia (\foreignlanguage{greek}{τεχνολογία}). Nas palavras de \textcite{Knuth1984}:
+Desse esforço nasceu o sistema \TeX. A pronúncia correta é ``téc'', como na palavra ``técnica'', pois sua etimologia remete diretamente à palavra grega \textgreek{τέχνη}, que significa `arte' e `técnica'. O próprio Knuth explica que o nome \TeX\ é simplesmente a forma maiúscula da raiz grega \textgreek{τεχ}:
 
 \begin{citacao}[english]
-English words like ``technology'' stem from a Greek root beginning with the letters \foreignlanguage{greek}{τεχ}\ldots; and this same Greek word means art as well as technology. Hence the name \TeX, which is an uppercase form of \foreignlanguage{greek}{τεχ} \cite{Knuth1984}.
+English words like ``technology'' stem from a Greek root beginning with the letters \textgreek{τεχ}\ldots; and this same Greek word means art as well as technology. Hence the name \TeX, which is an uppercase form of \textgreek{τεχ} \cite{Knuth1984}.
 \end{citacao}
 
-O \TeX{} revolucionou a composição de textos científicos ao permitir um controle preciso sobre a formatação, especialmente para documentos com notações matemáticas complexas. No entanto, sua complexidade e a necessidade de lidar diretamente com comandos de baixo nível tornavam seu uso desafiador para muitos usuários.
+O \TeX{} revolucionou a editoração científica ao oferecer um controle inédito sobre a formatação, especialmente em documentos com notações matemáticas complexas. Contudo, sua curva de aprendizado era íngreme; a necessidade de interagir com comandos de baixo nível tornava o sistema desafiador para o usuário comum, abrindo caminho para a próxima evolução em sua história.
 
-Para contornar esse problema e tornar o \TeX\ mais acessível, \textcite{Lamport1994} propôs o \LaTeX, um conjunto de macros que abstrai grande parte da complexidade do sistema original. A proposta de Lamport era oferecer uma separação clara entre conteúdo e formatação, permitindo que o autor se concentrasse na estrutura lógica do documento --- como seções, listas, equações e citações --- enquanto o sistema cuidava automaticamente dos aspectos tipográficos. Essa filosofia foi um dos grandes diferenciais do \LaTeX{} em relação a editores WYSIWYG%
-\footnote{WYSIWYG é sigla para \emph{\foreignlanguage{english}{What You See Is What You Get}}, algo como ``o que você vê é o que obtém'' em português. Refere-se a \emph{softwares} de edição visual de texto, a exemplo de processadores como o Microsoft Word ou Google Docs.}%
-, além de garantir consistência e alta qualidade tipográfica.
+Para tornar o \TeX{} mais acessível e contornar sua inerente complexidade, Leslie Lamport propôs, em 1994, o \LaTeX\ --- um conjunto de macros que abstrai grande parte dos comandos de baixo nível do sistema original \cite{Lamport1994}. A filosofia de Lamport era introduzir uma separação clara entre conteúdo e formatação. Isso permitiria ao autor focar exclusivamente na estrutura lógica do documento --- como seções, listas, equações e citações ---, delegando ao sistema a responsabilidade pelos detalhes da composição tipográfica. Essa abordagem, que garante consistência e alta qualidade visual, estabeleceu o grande diferencial do \LaTeX{} em relação aos editores WYSIWYG%
+\footnote{WYSIWYG é sigla para \emph{\foreignlanguage{english}{What You See Is What You Get}}, algo como ``o que você vê é o que obtém'' em português. Refere-se a \emph{softwares} de edição visual de texto, a exemplo de processadores como o Microsoft Word ou Google Docs.}.
 
-O \LaTeX\ rapidamente se consolidou como o padrão de fato para a redação de documentos científicos, sendo amplamente adotado por universidades, periódicos acadêmicos e conferências internacionais. Sua arquitetura modular possibilitou o desenvolvimento de pacotes especializados, que expandiram consideravelmente suas funcionalidades.
+O \LaTeX{} consolidou-se rapidamente como o padrão de fato na redação de documentos científicos, com ampla adoção por universidades, periódicos e conferências internacionais. Sua arquitetura modular foi um catalisador para o surgimento de um vasto ecossistema de pacotes especializados, que expandiram consideravelmente suas funcionalidades originais. A força dessa comunidade ativa de usuários e desenvolvedores é, segundo \textcite{Mittelbach2004}, o principal pilar que transformou o \LaTeX{} em uma plataforma robusta e adaptável às mais diversas áreas do conhecimento.
 
-Para \textcite{Mittelbach2004}, a grande força do \LaTeX\ reside justamente nessa comunidade ativa de usuários e desenvolvedores, que ao longo das décadas contribuiu para tornar o sistema uma plataforma robusta e adaptável às mais diversas áreas do conhecimento.
+Atualmente, a evolução do projeto é coordenada pelo \textit{\LaTeX\ Project Team}, um grupo de voluntários que supervisiona o núcleo do sistema e sua compatibilidade com tecnologias modernas. O grupo, cujo logotipo pode ser visto na \autoref{fig:latex-project-logo}\footnote{Sugerimos observar, no código-fonte, os comandos utilizados para referenciar figuras.}, é também responsável pela padronização de pacotes essenciais e pela incorporação de melhorias solicitadas pela comunidade, garantindo a estabilidade e a longevidade do ecossistema \LaTeX.
 
-Atualmente, o desenvolvimento e a manutenção do projeto é coordenado pelo \textit{\LaTeX\ Project Team}, um grupo de voluntários experientes que supervisiona tanto a evolução do núcleo do \LaTeX\ quanto a compatibilidade com outros sistemas modernos. Esse grupo, cujo logotipo pode ser visto na \autoref{fig:latex-project-logo}, também é responsável pela padronização de pacotes essenciais, pela documentação oficial e pela incorporação de melhorias solicitadas pela comunidade, garantindo a estabilidade e a continuidade do ecossistema \LaTeX\ em longo prazo.
-
-Em 2013, Leslie Lamport também recebeu o Prêmio Turing por suas contribuições fundamentais à ciência da computação, incluindo, além do \LaTeX, seus trabalhos sobre lógica temporal e verificação formal de sistemas concorrentes \cite{LamportTuring2013}.
+O impacto do trabalho de Lamport foi reconhecido para além da comunidade tipográfica. Em 2013, ele recebeu o Prêmio Turing por suas contribuições fundamentais à ciência da computação, que incluem não apenas o \LaTeX, mas também seus estudos sobre lógica temporal e verificação formal de sistemas concorrentes \cite{LamportTuring2013}.
 
 \begin{figure}
     \centering
@@ -55,17 +52,16 @@ Em 2013, Leslie Lamport também recebeu o Prêmio Turing por suas contribuiçõe
     \label{fig:latex-project-logo}
 \end{figure}
 
-\section{\LaTeX\ + ABNT} \label{sec:latex-abnt}
+\section{\LaTeX{} + ABNT} \label{sec:latex-abnt}
 
-O \LaTeX\ emerge como um sistema de preparação de documentos de alta qualidade tipográfica que, ao mesmo tempo, adota o princípio de Separação de Conceitos \cite{Dijkstra1982}, permitindo que a escrita do conteúdo e a formatação do documento sejam feitas em momentos distintos --- ou, até mesmo, por equipes distintas. Isso significa que o autor deve se concentrar no conteúdo, sem se preocupar com a formatação.
+Um dos pilares conceituais do \LaTeX{} é o princípio da Separação de Conceitos \cite{Dijkstra1982}, que permite dissociar a escrita do conteúdo da formatação do documento. Na prática, isso significa que o autor pode se concentrar inteiramente no texto, delegando as complexas tarefas de diagramação para o sistema. Essa abordagem modular permite que a formatação seja tratada em um momento distinto --- ou, até mesmo, por especialistas diferentes.
 
-No universo do \LaTeX{}, \emph{classes de documento} são arquivos que definem a estrutura e a formatação geral de um tipo específico de texto, como um artigo (\verb|article|), um relatório (\verb|report|), uma apresentação (\verb|beamer|), ou uma tese. Em essência, uma classe funciona como um molde que guia a forma final do texto, facilitando a aplicação de um estilo consistente sem que o autor precise se preocupar com cada detalhe tipográfico.
+No ecossistema \LaTeX{}, essa filosofia se materializa, em primeiro lugar, nas \emph{classes de documento}. Uma classe é um arquivo que define toda a estrutura e o estilo visual de um tipo específico de publicação, como um artigo (\texttt{article}), um relatório (\texttt{report}) ou uma tese. Ela funciona como uma camada de abstração que aplica um design consistente ao texto, liberando o autor da necessidade de gerenciar cada detalhe tipográfico individualmente.
 
-Enquanto as classes lidam com a estrutura e o visual do documento como um todo, a bibliografia é tratada por outro conjunto de ferramentas. Um dos sistemas mais poderosos e modernos para gerenciamento de referências no \LaTeX{} é o Bib\LaTeX, que oferece muito mais controle e flexibilidade sobre como as referências são apresentadas e citadas no texto.
-Ao separar os dados bibliográficos e a formatação desses dados, o Bib\LaTeX\ permite ao autor fazer citações sem se preocupar com o estilo de citação. As citações e bibliografia são então geradas automaticamente, de acordo com o estilo escolhido pelo usuário.
+De forma análoga, o gerenciamento da bibliografia é tratado por um conjunto de ferramentas independentes. Entre os sistemas mais modernos e poderosos está o Bib\LaTeX, que oferece controle e flexibilidade sobre a apresentação das referências e o estilo das citações no texto. Ao separar os dados bibliográficos brutos da sua formatação final, o Bib\LaTeX\ automatiza a geração das citações e da lista de referências, garantindo conformidade com o estilo bibliográfico escolhido pelo usuário.
 
-Sobre a produção acadêmica no Brasil, observaremos que as normas ABNT são muito específicas, frequentemente mais rígidas e idiossincráticas que os estilos internacionais. Isso impõe desafios técnicos para quem deseja focar no conteúdo do seu próprio trabalho, em vez de se especializar em tais normas.
+No contexto da produção acadêmica brasileira, essa modularidade é especialmente valiosa. As normas da ABNT são notórias por suas especificidades, sendo frequentemente mais rígidas e idiossincráticas que os padrões internacionais. Tais exigências impõem um desafio técnico considerável, desviando o foco do pesquisador do conteúdo de seu trabalho para a complexa tarefa de adequação às normas.
 
-Felizmente, o ecossistema \LaTeX\ oferece soluções práticas, elegantes e de altíssima qualidade para resolver esse problema. A classe abn\TeX2 \cite{abntex2classe}, na qual este documento se baseia, implementa estritamente todas as normas ABNT relacionadas à formatação de documentos acadêmicos, enquanto o estilo \verb|biblatex-abnt| \cite{biblatex-abnt} fornece citações e bibliografia conforme as normas.
+Felizmente, a comunidade \LaTeX\ oferece soluções robustas e elegantes para esse problema. A classe \texttt{abn\TeX2} \cite{abntex2classe}, na qual este modelo se baseia, implementa de forma estrita as normas da ABNT para a estrutura de documentos acadêmicos. Em paralelo, o estilo \texttt{biblatex-abnt} \cite{biblatex-abnt} encarrega-se de formatar as citações e a bibliografia de acordo com as mesmas exigências.
 
-Este documento utiliza extensivamente ambos, e pode ser utilizado como ponto de partida para o seu próprio trabalho.
+Este documento, portanto, utiliza extensivamente a sinergia entre essas duas ferramentas. Ele pode ser adotado não apenas como um modelo, mas como um ponto de partida consolidado para a produção de trabalhos acadêmicos em total conformidade com os padrões brasileiros.
