@@ -1,0 +1,33 @@
+name: Build Draft
+
+on:
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - '**'
+
+jobs:
+  build_draft:
+    name: Compilar Rascunho
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v6
+
+      - name: Compilar LaTeX
+        uses: xu-cheng/texlive-action@v3
+        with:
+          texlive_version: latest
+          run: |
+            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
+      - name: Renomear Artefato
+        run: mv main.pdf preview.pdf
+
+      - name: Disponibilizar PDF como Artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-preview
+          path: preview.pdf
+          retention-days: 15

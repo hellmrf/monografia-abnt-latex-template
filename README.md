@@ -17,15 +17,15 @@ O template gera um documento elegante, com tipografia profissional e todos os el
 - **⚙ Estrutura Modular e Organizada:** A separação em diretórios (`chapters`, `includes`, `bib`, `img`) torna o projeto limpo e fácil de manter, mesmo para documentos extensos.
 - **🎓 Exemplos Didáticos Reais:** O modelo é preenchido com uma tese fictícia que demonstra o uso de recursos essenciais:
    - **Capítulo 1:** Uma introdução histórica real sobre $\TeX$ e $\LaTeX$.
-   - **Capítulos 2, 3 e 4:** Exemplos práticos aplicados a diversas áreas (Química , Físico-Química , IA , Física ), com uso intensivo de equações, figuras, tabelas e citações para você consultar e aprender.
+   - **Capítulos 2, 3 e 4:** Exemplos práticos aplicados a diversas áreas (Química, Físico-Química, IA, Física), com uso intensivo de equações, figuras, tabelas e citações para você consultar e aprender.
 
 ## Pré-requisitos
 
 Para compilar este projeto, você precisará de uma distribuição $\LaTeX$ completa instalada em seu sistema. Recomenda-se:
 
 - Distribuição $\LaTeX$:
-   - [MiKTeX](https://miktex.org/) (Windows);
-   - [TeX Live](https://www.tug.org/texlive/) (Linux / Windows);
+   - [MiKTeX](https://miktex.org/) (mais amigável de usar);
+   - [TeX Live](https://www.tug.org/texlive/) (mais previsível e melhor para automação);
    - [MacTeX](https://www.tug.org/mactex/) (para macOS).
 - O backend de bibliografia [Biber](https://ctan.org/pkg/biber) (geralmente incluído no TeX Live e MacTeX).
 - Um editor de $\LaTeX$, como o [Visual Studio Code](https://code.visualstudio.com/) com a extensão [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop), ou o [TeXstudio](https://www.texstudio.org/).

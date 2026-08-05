@@ -2,5 +2,9 @@
     "recommendations": [
         "pkief.material-icon-theme",
         "james-yu.latex-workshop",
+        "ltex-plus.vscode-ltex-plus",
+    ],
+    "unwantedRecommendations": [
+        "tomoki1207.pdf"
     ]
 }
