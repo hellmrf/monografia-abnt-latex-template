@@ -8,6 +8,8 @@ Este projeto utiliza a classe `abnTeX2` e o sistema de bibliografia `biblatex-ab
 
 O template gera um documento elegante, com tipografia profissional e todos os elementos pré e pós-textuais exigidos pela ABNT, pronto para impressão ou submissão digital.
 
+> [!TIP]
+> **Exemplo: [`main.pdf`](https://github.com/hellmrf/monografia-abnt-latex-template/releases/latest/download/main.pdf)**
 
 ## Principais Funcionalidades
 
