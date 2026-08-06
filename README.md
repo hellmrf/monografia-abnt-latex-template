@@ -69,6 +69,7 @@ Para compilar este projeto _offline_, você precisará de uma distribuição $\L
 ## Como Utilizar
 
 1.  Clique em **Usar este template** no Github e crie um novo repositório.
+  ![](https://i.imgur.com/adlAwja.png)
 2.  **Configure seus dados:** Abra o arquivo `includes/preamble.tex` e preencha os metadados do seu trabalho (título, autor, orientador, instituição, etc.).
 3.  **Escreva seu conteúdo:** Apague os arquivos de exemplo no diretório `chapters/` e crie seus próprios arquivos `.tex` para cada capítulo. Lembre-se de incluí-los no arquivo principal `main.tex`.
 4.  **Adicione suas referências:** Coloque seu arquivo `.bib` (ou múltiplos arquivos) no diretório `bib/`. O template está configurado para carregar todos os arquivos `.bib` que encontrar nesse diretório.
@@ -169,4 +170,4 @@ Este modelo só é possível graças ao trabalho voluntário e à dedicação da
 
 ## Licença
 
-Este projeto é distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto é distribuído sob a licença *LaTeX project public license (LPPL) 1.3c*. O uso é livre para todos os fins e modificações são permitidas, desde que o novo produto seja distribuído publicamente sob a mesma licença e contenha os créditos originais. Veja o arquivo [`LICENSE`](./LICENSE) para mais detalhes.
